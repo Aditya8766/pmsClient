@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="resume.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Builder</h1>
+        <form id="resume-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="objective">Objective:</label>
+                <textarea id="objective" name="objective" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="education">Education:</label>
+                <textarea id="education" name="education" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="skills">Skills:</label>
+                <textarea id="skills" name="skills" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="projects">Projects:</label>
+                <textarea id="projects" name="projects" required></textarea>
+            </div>
+
+            <button type="button" id="generate-button">Generate Resume</button>
+        </form>
+
+        <div class="resume">
+            <h2>Resume</h2>
+            <p><strong>Name:</strong> <span id="resume-name"></span></p>
+            <p><strong>Objective:</strong> <span id="resume-objective"></span></p>
+            <p><strong>Education:</strong> <span id="resume-education"></span></p>
+            <p><strong>Skills:</strong> <span id="resume-skills"></span></p>
+            <p><strong>Projects:</strong> <span id="resume-projects"></span></p>
+            <button id="generate-button">Upload to Cloud</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('generate-button').addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const objective = document.getElementById('objective').value;
+            const education = document.getElementById('education').value;
+            const skills = document.getElementById('skills').value;
+            const projects = document.getElementById('projects').value;
+
+            document.getElementById('resume-name').textContent = name;
+            document.getElementById('resume-objective').textContent = objective;
+            document.getElementById('resume-education').textContent = education;
+            document.getElementById('resume-skills').textContent = skills;
+            document.getElementById('resume-projects').textContent = projects;
+
+            document.getElementById('resume-form').style.display = 'none';
+            document.querySelector('.resume').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

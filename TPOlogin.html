@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TPO Login Page</title>  
+    <link rel="stylesheet" href="TPOlogin.css"> 
+</head>
+<body>
+  <div class="login-container">
+      <h2>Login</h2>
+      <div class="error-message" id="error-message"></div>
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="login()">Login</button>
+  </div>
+
+  <script>
+      function login() {
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
+
+          // Check if the username and password are correct (you would typically do this on the server)
+          if (username === "tpo@123" && password === "tpo123") {
+              // Redirect to the user dashboard or another page
+              window.location.href = "tpoafterlogin.html";
+          } else {
+              // Display an error message
+              document.getElementById("error-message").innerText = "Invalid username or password";
+          }
+      }
+  </script>
+</body>
+</html>
